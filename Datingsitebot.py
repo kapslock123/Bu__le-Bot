@@ -4,16 +4,14 @@ from random import random
 from random import uniform
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
-
-driver.get('https://bumble.com')
+#enter website name below
+driver.get('https://__mble.com')
 
 sleep(uniform(5, 10))
-
-#faltu_buttons=driver.find_element_by_xpath('/html/body/div/div[2]/div[2]/div[3]/div[3]/button[2]')
-#faltu_buttons.click()
+# The accept cookies xpath changes with orientation, so we have to press it manually
 faltu_buttons=driver.find_element_by_xpath('//*[@id="page"]/div/div/div[1]/div/div[2]/div/div/div/div[2]/div[1]/div/div[2]/a')
 faltu_buttons.click()
-
+# now you'll get 80 seconds to manually login by phone this will take care of h@man touch
 try:
     hold=driver.find_element_by_xpath('//*[@id="main"]/div/div[1]/main/div[2]/div/div/span/div[2]/div/div[2]/div/div[1]/div/div[1]/span')
 except Exception:
